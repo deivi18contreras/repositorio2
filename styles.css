@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #556B2F 0%, #8B4513 100%);
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  font-size: 2.5em;
+}
+
+#controls {
+  margin-bottom: 20px;
+}
+
+#controls button {
+  background: linear-gradient(45deg, #228B22, #8B4513);
+  border: none;
+  padding: 12px 24px;
+  margin: 0 10px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+#controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#controls label {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  padding: 10px 15px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  font-weight: 400;
+}
+
+.chat-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.chat-box {
+  width: 90%;
+  max-width: 700px;
+  height: 500px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(210, 180, 140, 0.95);
+  padding: 20px;
+  overflow-y: auto;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.chat-box div {
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 18px;
+  position: relative;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.msg.santiago {
+  background: linear-gradient(135deg, #4682B4, #2F4F4F);
+  color: white;
+  margin-left: 20px;
+  margin-right: 60px;
+  align-self: flex-end;
+}
+
+.msg.santiago::before {
+  content: "🇺🇸";
+  position: absolute;
+  left: -15px;
+  top: 12px;
+  font-size: 1.2em;
+}
+
+.msg.daniel {
+  background: linear-gradient(135deg, #8B0000, #696969);
+  color: white;
+  margin-right: 20px;
+  margin-left: 60px;
+}
+
+.msg.daniel::before {
+  content: "🇩🇪";
+  position: absolute;
+  right: -15px;
+  top: 12px;
+  font-size: 1.2em;
+}
+
+.msg.system {
+  background: rgba(0,0,0,0.1);
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin: 10px auto;
+  max-width: 80%;
+  font-weight: 500;
+}
+
+.chat-box small {
+  display: block;
+  font-size: 0.8em;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
